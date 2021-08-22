@@ -20,7 +20,7 @@ async function f() {
 }
 
 
-f();
+// f();
 
 // Promise
 function makeRequest(location){
@@ -61,4 +61,44 @@ async function doWork(){
   }
 }
 
-doWork();
+// doWork();
+
+///////////////////////
+
+function promiseFunc(){
+  return new Promise((resolve, reject) => {
+    resolve('I am promised');
+  })
+}
+
+function delayedPromiseFunc(){
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve('I am delayed promised');
+    }, 3000)
+  })
+}
+
+function work(){
+  delayedPromiseFunc().then(console.log);
+  promiseFunc().then(console.log);
+  console.log('1');
+}
+
+// work();
+// 1
+// I am promised
+//  I am delayed promised
+
+async function asyncWork(){
+  let res1 = await delayedPromiseFunc();
+  console.log(res1);
+  let res2 = await promiseFunc();
+  console.log(res2);
+  console.log('1');
+}
+
+asyncWork();
+// I am delayed promised
+// I am promised
+// 1
