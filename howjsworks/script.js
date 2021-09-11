@@ -81,6 +81,25 @@
  * This process makes V8 so fast.
  * 
  * 
+ * Runtime In the Browser
+ * =================================
  * 
+ * JS Engine + 
+ * Web API (Functionalities provided to the engine, accessible on window object DOM + Timer + Fetch API) + 
+ * Callback Queue
+ * 
+ * Runtime In Node JS
+ * =======================
+ * JS Engine +
+ * C++ Bindings +
+ * Callback Queue  
+ * 
+ * 
+ * What is an execution context?
+ * =================================
+ * 
+ * Compilation ==============> Execution
+ * 
+ *  - Creation of global execution context (for top-level code not inside a function)
  * 
  */                               
